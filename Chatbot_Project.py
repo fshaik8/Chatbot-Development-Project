@@ -1,16 +1,3 @@
-# CS421: Natural Language Processing
-# University of Illinois at Chicago
-# Fall 2023
-# Project Part 3
-#
-# Do not rename/delete any functions or global variables provided in this template and write your solution
-# in the specified sections. Use the main function to test your code when running it from a terminal.
-# Avoid writing that code in the global scope; however, you should write additional functions/classes
-# as needed in the global scope. These templates may also contain important information and/or examples
-# in comments so please read them carefully. If you want to use external packages (not specified in
-# the assignment) then you need prior approval from course staff.
-# =========================================================================================================
-
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import GaussianNB
 import pandas as pd
@@ -25,14 +12,6 @@ import re
 import csv
 import nltk
 
-#-----------------------------------CODE FROM PART 1--------------------------------------------------
-
-# Before running code that makes use of Word2Vec, you will need to download the provided w2v.pkl file
-# which contains the pre-trained word2vec representations from Blackboard
-#
-# If you store the downloaded .pkl file in the same directory as this Python
-# file, leave the global EMBEDDING_FILE variable below as is.  If you store the
-# file elsewhere, you will need to update the file path accordingly.
 EMBEDDING_FILE = "w2v.pkl"
 
 
@@ -226,13 +205,6 @@ def test_model_w2v(model, word2vec, test_documents, test_labels):
     accuracy = accuracy_score(test_labels, predictions)
     return precision, recall, f1, accuracy
 
-#-----------------------------------CODE FROM PART 2--------------------------------------------------
-
-# Function: count_words(user_input)
-# user_input: A string of arbitrary length
-# Returns: An integer value
-#
-# This function counts the number of words in the input string.
 def count_words(user_input):
     num_words = 0
     token = [token for token in get_tokens(user_input) if token not in string.punctuation]
@@ -380,14 +352,6 @@ def summarize_analysis(num_words, wps, num_pronouns, num_prp, num_articles, num_
     return informative_correlates
 
 
-#-----------------------------------NEW IN PART 3--------------------------------------------------
-
-# Function: welcome_state()
-# This function does not take any input
-# Returns: A string indicating the next state
-#
-# This function implements the chatbot's welcome states.  Feel free to customize
-# the welcome message!  In this state, the chatbot greets the user.
 def welcome_state():
     # Display a welcome message to the user
     user_input = print("Welcome to the CS 421 chatbot!  ")
